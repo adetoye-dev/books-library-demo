@@ -26,5 +26,15 @@
   outline: 1px solid red;
   padding: 30px 20px;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 700px) {
+  .main {
+    flex-direction: row;
+  }
 }
