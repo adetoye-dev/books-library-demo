@@ -23,10 +23,9 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/books" replace={true} />} />
-      <Route path="/books" element={<Home />} />
-      <Route path="/books/add" element={<AddBook />} />
-      <Route path="/books/update/:id" element={<UpdateBook />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/add" element={<AddBook />} />
+      <Route path="/update/:id" element={<UpdateBook />} />
     </Routes>
   );
 }
