@@ -7,7 +7,9 @@ const Home = () => {
     <div className="App">
       <header className="header">
         <h1 className="title">Books</h1>
-        <Link className="add-book-btn">Add New Book</Link>
+        <Link to="/add" className="add-book-btn">
+          Add New Book
+        </Link>
       </header>
       <main className="main">
         <Books />
