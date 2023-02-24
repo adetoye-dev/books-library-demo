@@ -5,15 +5,12 @@ const BookCard = (props) => {
   return (
     <div className="book-card">
       <div className="book-cover">
-        <img src="" alt="book-cover" className="cover-img" />
+        <img src={props.cover} alt="book-cover" className="cover-img" />
       </div>
       <div className="book-data">
-        <h2 className="book-title">Book Title</h2>
-        <p className="book-desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia minima
-          nostrum. Rerum, placeat laudantium. Earum.
-        </p>
-        <Link to="/update/bookId" className="update">
+        <h2 className="book-title">{props.title}</h2>
+        <p className="book-desc">{props.desc}</p>
+        <Link to={`/update/${props.id}`} className="update">
           Update
         </Link>
         <Link className="delete">Delete</Link>
