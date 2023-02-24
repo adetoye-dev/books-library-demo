@@ -1,0 +1,38 @@
+.book-card {
+  outline: 2px solid blue;
+  width: 250px;
+  border-radius: 0 0 10px 10px;
+}
+
+.book-cover {
+  width: 100%;
+  height: 250px;
+  outline: 2px solid green;
+}
+
+.book-data {
+  padding: 10px;
+}
+
+.book-title,
+.book-desc {
+  margin-bottom: 10px;
+}
+
+.update,
+.delete {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid;
+  text-decoration: none;
+}
+
+.update {
+  color: green;
+  margin-right: 15px;
+}
+
+.delete {
+  color: red;
+}
