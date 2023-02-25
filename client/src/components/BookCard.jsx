@@ -13,7 +13,9 @@ const BookCard = (props) => {
 
   const deleteBook = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:8800/books/${id}`);
+      const response = await axios.delete(
+        `https://books-library-demo-api.cyclic.app/books/${id}`
+      );
 
       if (response.status == 200) {
         alert("Book deleted successfully");

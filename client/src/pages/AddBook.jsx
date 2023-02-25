@@ -16,9 +16,12 @@ const AddBook = () => {
 
   const addBook = async () => {
     try {
-      const response = await axios.post("http://localhost:8800/books", {
-        ...book,
-      });
+      const response = await axios.post(
+        "https://books-library-demo-api.cyclic.app/books",
+        {
+          ...book,
+        }
+      );
 
       if (response.status == 200) {
         alert("Book added successfully");

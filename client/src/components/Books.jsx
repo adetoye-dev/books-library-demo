@@ -8,7 +8,9 @@ const Books = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8800/books");
+        const response = await axios.get(
+          "https://books-library-demo-api.cyclic.app/books"
+        );
         setBooks(response.data);
       } catch (err) {
         console.log(err);

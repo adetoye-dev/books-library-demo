@@ -17,9 +17,12 @@ const UpdateBook = () => {
 
   const updateBook = async (id) => {
     try {
-      const response = await axios.put(`http://localhost:8800/books/${id}`, {
-        ...book,
-      });
+      const response = await axios.put(
+        `https://books-library-demo-api.cyclic.app/books/${id}`,
+        {
+          ...book,
+        }
+      );
 
       if (response.status == 200) {
         alert("Book updated successfully");
