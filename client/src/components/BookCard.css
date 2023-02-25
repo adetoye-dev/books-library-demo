@@ -1,13 +1,13 @@
 .book-card {
-  outline: 2px solid blue;
   width: 250px;
   border-radius: 0 0 10px 10px;
+  background: #ffffff;
+  box-shadow: 7px 7px 14px #d1d1d1, -7px -7px 14px #ffffff;
 }
 
 .book-cover {
   width: 100%;
   height: 250px;
-  outline: 2px solid green;
 }
 
 .book-data {
