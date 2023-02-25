@@ -7,10 +7,10 @@ app.use(express.json());
 app.use(cors());
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "MySQLadmin_12345",
-  database: "test",
+  host: "sql8.freesqldatabase.com",
+  user: "sql8600950",
+  password: "UITIqS9qHX",
+  database: "sql8600950",
 });
 
 app.get("/", (req, res) => {
@@ -26,7 +26,7 @@ app.get("/books", (req, res) => {
 });
 
 app.post("/books", (req, res) => {
-  const q = "INSERT INTO test.books (`title`, `desc`, `cover`) VALUES (?)";
+  const q = "INSERT INTO books (`title`, `desc`, `cover`) VALUES (?)";
 
   const values = [req.body.title, req.body.desc, req.body.cover];
 
@@ -38,7 +38,7 @@ app.post("/books", (req, res) => {
 
 app.put("/books/:id", (req, res) => {
   const q =
-    "UPDATE test.books SET `title` = ?, `desc` = ?, `cover` = ? WHERE id = ?";
+    "UPDATE books SET `title` = ?, `desc` = ?, `cover` = ? WHERE id = ?";
 
   const values = [req.body.title, req.body.desc, req.body.cover];
 
@@ -49,7 +49,7 @@ app.put("/books/:id", (req, res) => {
 });
 
 app.delete("/books/:id", (req, res) => {
-  const q = "DELETE FROM test.books WHERE id = ?";
+  const q = "DELETE FROM books WHERE id = ?";
   db.query(q, req.params.id, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
