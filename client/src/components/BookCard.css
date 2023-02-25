@@ -26,13 +26,15 @@
   border-radius: 8px;
   border: 1px solid;
   text-decoration: none;
+  background: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .update {
-  color: green;
+  color: hsl(201, 93%, 47%);
   margin-right: 15px;
 }
 
 .delete {
-  color: red;
+  color: hsl(340, 85%, 63%);
 }

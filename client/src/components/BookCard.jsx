@@ -1,7 +1,15 @@
-import { Link } from "react-router-dom";
 import "./BookCard.css";
+import { useNavigate } from "react-router-dom";
 
 const BookCard = (props) => {
+  const navigate = useNavigate();
+
+  const updateBook = () => {
+    navigate(`/update/${props.id}`, {
+      state: { ...props },
+    });
+  };
+
   return (
     <div className="book-card">
       <div className="book-cover">
@@ -10,10 +18,10 @@ const BookCard = (props) => {
       <div className="book-data">
         <h2 className="book-title">{props.title}</h2>
         <p className="book-desc">{props.desc}</p>
-        <Link to={`/update/${props.id}`} className="update">
+        <button onClick={updateBook} className="update">
           Update
-        </Link>
-        <Link className="delete">Delete</Link>
+        </button>
+        <button className="delete">Delete</button>
       </div>
     </div>
   );
