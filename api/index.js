@@ -38,7 +38,7 @@ app.post("/books", (req, res) => {
 
 app.put("/books/:id", (req, res) => {
   const q =
-    "UPDATE test.books SET title = '', desc = '', cover = '' WHERE id = ?";
+    "UPDATE test.books SET `title` = ?, `desc` = ?, `cover` = ? WHERE id = ?";
 
   const values = [req.body.title, req.body.desc, req.body.cover];
 
