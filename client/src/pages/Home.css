@@ -7,6 +7,10 @@
   background-color: hsl(187, 52%, 80%);
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .add-book-btn {
   text-decoration: none;
   color: black;
