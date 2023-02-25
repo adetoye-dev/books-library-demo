@@ -2,15 +2,33 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const UpdateBook = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
+
   const [book, setBook] = useState({
     title: state.title,
     desc: state.desc,
     cover: state.cover,
   });
+
+  const updateBook = async (id) => {
+    try {
+      const response = await axios.put(`http://localhost:8800/books/${id}`, {
+        ...book,
+      });
+
+      if (response.status == 200) {
+        alert("Book updated successfully");
+        navigate("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleChange = (e) => {
     setBook((book) => ({ ...book, [e.target.name]: e.target.value }));
@@ -54,7 +72,9 @@ const UpdateBook = () => {
             defaultValue={book.cover}
             onChange={handleChange}
           />
-          <Button variant="contained">Update Book</Button>
+          <Button variant="contained" onClick={() => updateBook(state.id)}>
+            Update Book
+          </Button>
         </Box>
       </main>
     </>
