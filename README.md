@@ -10,6 +10,6 @@ This is a demo book library application with full CRUD operations using Node, Ex
  
  ## Credits
  This application is hosted for free on these platforms
- - [vercel]("https://vercel.com/") - Frontend
- - [cyclic]("https://cyclic.sh/") - Server
- - [freesqldatabase]("freesqldatabase.com/") - Database
+ - [vercel](https://vercel.com/) - Frontend
+ - [cyclic](https://cyclic.sh/) - Server
+ - [freesqldatabase](https://freesqldatabase.com/) - Database
