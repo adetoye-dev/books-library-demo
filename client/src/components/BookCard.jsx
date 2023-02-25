@@ -1,5 +1,6 @@
 import "./BookCard.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const BookCard = (props) => {
   const navigate = useNavigate();
@@ -8,6 +9,19 @@ const BookCard = (props) => {
     navigate(`/update/${props.id}`, {
       state: { ...props },
     });
+  };
+
+  const deleteBook = async (id) => {
+    try {
+      const response = await axios.delete(`http://localhost:8800/books/${id}`);
+
+      if (response.status == 200) {
+        alert("Book deleted successfully");
+        window.location.reload();
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -21,7 +35,9 @@ const BookCard = (props) => {
         <button onClick={updateBook} className="update">
           Update
         </button>
-        <button className="delete">Delete</button>
+        <button className="delete" onClick={() => deleteBook(props.id)}>
+          Delete
+        </button>
       </div>
     </div>
   );
